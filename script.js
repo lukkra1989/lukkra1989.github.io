@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
     //var apiRoot = 'https://git.heroku.com/peaceful-beyond-59271.git/v1/task/';
-    var apiRoot = 'https://peaceful-beyond-59271.herokuapp.com/v1/tasks/';
+    var apiRoot = 'https://peaceful-beyond-59271.herokuapp.com/v1/task';
+	var trelloApiRoot = 'https://peaceful-beyond-59271.herokuapp.com/v1/trello/';
     var datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
     var tasksContainer = $('[data-tasks-container]');
 
