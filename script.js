@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
-    //var apiRoot = 'https://git.heroku.com/peaceful-beyond-59271.git/v1/task/';
-    var apiRoot = 'https://peaceful-beyond-59271.herokuapp.com/v1/task';
+    var apiRoot = 'https://peaceful-beyond-59271.herokuapp.com';
 	var trelloApiRoot = 'https://peaceful-beyond-59271.herokuapp.com/v1/trello/';
     var datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
     var tasksContainer = $('[data-tasks-container]');
@@ -30,7 +29,7 @@ $(document).ready(function () {
     }
 
     function getAllTasks() {
-        var requestUrl = apiRoot + 'getTasks';
+        var requestUrl = apiRoot + '/v1/task/getTasks';
 
         $.ajax({
             url: requestUrl,
@@ -44,7 +43,7 @@ $(document).ready(function () {
         var taskId = parentEl.attr('data-task-id');
         var taskTitle = parentEl.find('[data-task-name-input]').val();
         var taskContent = parentEl.find('[data-task-content-input]').val();
-        var requestUrl = apiRoot + 'updateTask';
+        var requestUrl = apiRoot + '/v1/task/updateTask';
 
         $.ajax({
             url: requestUrl,
@@ -68,10 +67,10 @@ $(document).ready(function () {
     function handleTaskDeleteRequest() {
         var parentEl = $(this).parent().parent();
         var taskId = parentEl.attr('data-task-id');
-        var requestUrl = apiRoot + 'deleteTask';
+        var requestUrl = apiRoot + '/v1/task/deleteTask';
 
         $.ajax({
-            url: requestUrl + '/?' + $.param({
+            url: requestUrl + '?' + $.param({
                 taskId: taskId
             }),
             method: 'DELETE',
@@ -89,7 +88,7 @@ $(document).ready(function () {
         var taskTitle = $(this).find('[name="title"]').val();
         var taskContent = $(this).find('[name="content"]').val();
 
-        var requestUrl = apiRoot + 'createTask';
+        var requestUrl = apiRoot + '/v1/task/createTask';
 
         $.ajax({
             url: requestUrl,
