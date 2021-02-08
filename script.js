@@ -64,9 +64,7 @@ $(document).ready(function() {
    }
 
    function getAllTasks() {
-      //const requestUrl = apiRoot + 'getTasks';
-
-      const requestUrl = apiRoot + 'getTrelloCard';
+      const requestUrl = apiRoot + 'getTasks';
 
       $.ajax({
          url: requestUrl,
