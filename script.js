@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     const apiRoot = 'http://peaceful-beyond-59271.herokuapp/v1/task/';
-    //const trelloApiRoot = 'http://peaceful-beyond-59271.herokuapp/v1/trello/';
+    const trelloApiRoot = 'http://peaceful-beyond-59271.herokuapp/v1/trello/';
     const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
     const $tasksContainer = $('[data-tasks-container]');
 
@@ -11,7 +11,7 @@ $(document).ready(function() {
   // init
   getAllTasks();
 
-    unction getAllAvailableBoards(callback, callbackArgs) {
+    function getAllAvailableBoards(callback, callbackArgs) {
         var requestUrl = trelloApiRoot + 'getTrelloBoards';
 
         $.ajax({
