@@ -129,7 +129,7 @@ $(document).ready(function() {
     var taskTitle = $(this).find('[name="title"]').val();
     var taskContent = $(this).find('[name="content"]').val();
 
-    var requestUrl = apiRoot + 'createTask';
+    var requestUrl = apiRoot + '/v1/trello/createTask';
 
     $.ajax({
       url: requestUrl,
