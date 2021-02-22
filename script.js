@@ -49,7 +49,7 @@ $(document).ready(function() {
     tasksContainer.empty();
     boards.forEach(function(board => {
             availableBoards[board.id] = board;
-    });
+    }));
   }
 
     taskData.forEach(function(task) {
